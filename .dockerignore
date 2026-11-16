@@ -1,0 +1,17 @@
+**
+!package.json
+!package-lock.json
+!LICENSE
+!apps/
+!apps/api/
+!apps/api/src/
+!apps/api/src/**
+!apps/api/vite.config.ts
+!apps/web/
+!apps/web/public/
+!apps/web/public/third-party-notices.txt
+!packages/
+!packages/content/
+!packages/content/**
+!scripts/
+!scripts/backup-db.mjs

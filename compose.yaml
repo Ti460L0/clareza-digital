@@ -1,0 +1,36 @@
+name: clareza-digital
+services:
+  api:
+    image: clareza-digital-api:${RELEASE_TAG:-local}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NODE_IMAGE: ${NODE_IMAGE:-node:24-bookworm-slim}
+    env_file: .env
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8788
+      DATABASE_PATH: /app/data/usage.sqlite
+    ports:
+      - "127.0.0.1:8788:8788"
+    volumes:
+      - usage-data:/app/data
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    init: true
+    restart: unless-stopped
+    stop_grace_period: 35s
+    mem_limit: 256m
+    cpus: 1.0
+    pids_limit: 64
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"
+volumes:
+  usage-data:

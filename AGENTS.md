@@ -1,0 +1,15 @@
+# Instruções para o Codex
+- Leia README.md, docs/00-INDICE.md e a etapa atual antes de editar.
+- Este pedido é de planejamento. Implementação começa em pedido posterior; não publicar nem criar contas automaticamente.
+- Preserve alterações humanas; inspecione estado do repositório antes de mudar arquivos existentes.
+- Execute entregas pequenas completas, com critérios de aceite e testes pertinentes. Não deixar botões fictícios ou aulas vazias parecendo prontas.
+- Português brasileiro simples e adulto; acessibilidade desde a fundação.
+- Sem certificado, cadastro obrigatório, suporte humano, formulário de feedback ou gravação exigida do autor.
+- Simulações identificadas, marcas e dados fictícios, sem credenciais reais ou destinos maliciosos.
+- Segredos no servidor; nunca em bundle, logs públicos ou Git.
+- Verifique versões, preços, APIs e interfaces em documentação oficial atual. Registre decisões reversíveis sem travar o trabalho.
+- Consulte habilidades Remotion na produção de mídia e habilidades aplicáveis aos serviços efetivamente escolhidos.
+- Não invente fontes, participantes, diagnósticos, autorizações, resultados ou testes realizados.
+- Atualize docs/16-STATUS.md após cada entrega. Nunca marque conclusão sem evidência.
+- Não enviar mensagens, publicar serviços ou contratar recursos sem autorização pertinente.
+- Não delegar agentes sem instrução explícita aplicável.

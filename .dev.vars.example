@@ -1,0 +1,3 @@
+# Copie para .dev.vars somente para testar o Worker local.
+# Deve coincidir com API_SHARED_SECRET no backend. Não é a chave do provedor de IA.
+API_SHARED_SECRET=SUBSTITUA_POR_SEGREDO_ALEATORIO_COM_32_CARACTERES_OU_MAIS

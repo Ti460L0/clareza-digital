@@ -1,0 +1,43 @@
+import { test, expect } from '@playwright/test';
+const path = '/cursos/seguranca/aulas/antes-de-clicar';
+test('retoma a última aula visitada mesmo sem avançar um slide', async ({ page }) => {
+  await page.goto(path);
+  await page.goto('/cursos/ia/aulas/o-que-ia-faz');
+  await page.goto('/');
+  await expect(page.getByRole('link', { name: 'Continuar de onde parei' })).toHaveAttribute('href', '/cursos/ia/aulas/o-que-ia-faz');
+  await page.goto(path);
+  await page.goto('/');
+  await expect(page.getByRole('link', { name: 'Continuar de onde parei' })).toHaveAttribute('href', path);
+});
+test('reinício em leitura contínua limpa quiz e simulação e move foco', async ({ page }) => {
+  await page.goto(path);
+  await page.getByRole('button', { name: 'Ler tudo em sequência' }).click();
+  await page.getByLabel('Abrir o aplicativo da compra por conta própria.').check();
+  await page.getByRole('button', { name: 'Conferir resposta' }).click();
+  await expect(page.locator('.feedback')).toBeFocused();
+  await page.getByRole('button', { name: 'Próxima questão' }).click();
+  await expect(page.locator('.quiz legend')).toBeFocused();
+  await page.getByRole('button', { name: 'Abrir exemplo ilustrado' }).click();
+  await page.getByRole('button', { name: 'Reiniciar esta aula' }).click();
+  await page.getByRole('button', { name: 'Sim, reiniciar aula' }).click();
+  await expect(page.getByRole('heading', { name: 'Uma pausa muda a decisão' })).toBeFocused();
+  await page.getByRole('button', { name: 'Ler tudo em sequência' }).click();
+  await expect(page.getByText('Questão 1 de 2', { exact: false })).toBeVisible();
+  await expect(page.locator('.quiz input:checked')).toHaveCount(0);
+  await expect(page.locator('.feedback')).toHaveCount(0);
+  await expect(page.getByText('Nenhum campo aceita dados', { exact: false })).toHaveCount(0);
+});
+test('progresso inicial migra sem perder respostas e formato futuro fica preservado', async ({ page }) => {
+  await page.goto('/');
+  await page.evaluate(() => localStorage.setItem('clareza-digital:progress', JSON.stringify({ schemaVersion: 1, lessons: { 'antes-de-clicar': { step: 1, completed: false, attempts: { q1: { first: 'a', last: 'b', count: 2 } } } } })));
+  await page.goto(path);
+  await expect(page.getByRole('heading', { name: 'A aparência não confirma a cobrança' })).toBeVisible();
+  const data = await page.evaluate(() => JSON.parse(localStorage.getItem('clareza-digital:progress')!));
+  expect(data.schemaVersion).toBe(2);
+  expect(data.lessons['antes-de-clicar'].attempts.q1.count).toBe(2);
+  const future = '{"schemaVersion":99,"preservar":"sim"}';
+  await page.evaluate(value => localStorage.setItem('clareza-digital:progress', value), future);
+  await page.reload();
+  await page.getByRole('button', { name: 'Continuar →' }).click();
+  expect(await page.evaluate(() => localStorage.getItem('clareza-digital:progress'))).toBe(future);
+});

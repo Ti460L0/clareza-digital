@@ -1,0 +1,54 @@
+# Dependências, builds e caches locais
+node_modules/
+dist/
+.wrangler/
+.cache/
+.vite/
+coverage/
+*.tsbuildinfo
+
+# Credenciais e configurações pessoais (somente exemplos fictícios entram no Git)
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+*.local
+*.local.*
+*.pem
+*.key
+*.p12
+*.pfx
+.aws/
+.ssh/
+.codex/
+.agents/
+
+# Dados, modelos, avaliações e originais gerados localmente
+data/
+private/
+/output/
+apps/api/evaluation/
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+
+# Resultados descartáveis; preservar as mídias públicas em apps/web/public/media
+*.log
+test-results/
+playwright-report/
+blob-report/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Arquivos do sistema/editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+*.swp
+*.swo
