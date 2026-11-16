@@ -31,6 +31,9 @@ O `.gitignore` exclui credenciais, dados privados, dependências, builds, relat�
 Planejamento: 14/11/2026. Revalidar fontes, preços e interfaces antes do lançamento.
 
 ## Licenças e contribuições
+
+Quer adicionar uma aula ou sugerir um tema? Comece pelo [guia de contribuição](CONTRIBUTING.md), veja o [padrão das aulas e exemplo em código](docs/25-GUIA-DE-CONTRIBUICAO.md), copie os [prompts de conteúdo e vídeo](docs/26-PROMPTS-DE-CONTEUDO.md) ou preencha o [modelo de rascunho](docs/templates/AULA.md). Contribuições sem programação também são bem-vindas por proposta no GitHub.
+
 Código autoral: [MIT](LICENSE). Conteúdo educativo autoral: [CC BY 4.0](CONTENT-LICENSE.md). Bibliotecas, ferramentas e fontes externas mantêm suas próprias licenças; veja [avisos de terceiros](THIRD-PARTY-NOTICES.md). Uso pessoal acadêmico confirmado pelo responsável em 16/11/2026, elegível à licença gratuita Remotion 4.0.543. Orientações em [CONTRIBUTING](CONTRIBUTING.md), [SECURITY](SECURITY.md) e [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md).
 
 Avaliação de IA: [docs/21-AVALIACAO-IA.md](docs/21-AVALIACAO-IA.md). `npm run ai:eval:build` prepara o avaliador e `npm run ai:eval` faz apenas estimativa por padrão; não há resultado de modelo real aprovado.

@@ -20,3 +20,5 @@ Pagamentos, certificado, rede social, uploads, busca livre pela IA, navegação 
 22 Revisão de lançamento: auditoria critério a critério, evidências locais e pendências explícitas.
 23 Triagem de IA gratuita: modelos testados no Workers Free, escopo e resultados, sem aprovação automática.
 24 Revisão manual: tarefas reproduzíveis e aceite, com pendências de leitor de tela, zoom nativo, interfaces e desempenho.
+25 [Guia de contribuição de conteúdo](25-GUIA-DE-CONTRIBUICAO.md): padrão editorial, exemplo no esquema atual, fontes, mídia e verificações.
+26 [Prompts reutilizáveis](26-PROMPTS-DE-CONTEUDO.md): aula, vídeo narrado, complementos e revisão; [modelo de rascunho](templates/AULA.md).
